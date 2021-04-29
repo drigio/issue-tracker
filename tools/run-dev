@@ -3,9 +3,9 @@ CUR=$(dirname $(readlink -f $0))
 
 case "$1" in
     "-d")
-        docker-compose -f $CUR/../docker-compose.yml up dev -d
+        docker-compose -f $CUR/../docker-compose.yml up dev -d --remove-orphans
         ;;
     *)
-        docker-compose -f $CUR/../docker-compose.yml up dev
+        docker-compose -f $CUR/../docker-compose.yml up dev --remove-orphans
         ;;
 esac
